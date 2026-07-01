@@ -5,9 +5,14 @@ import heroImg from './assets/hero.png'
 import altrinLogo from './assets/altrin.jpg'
 import './App.css'
 
-import Header from './components/Header.jsx'
+import Header from './components/Header/Header.jsx'
+import Button from './components/Button/Button.jsx'
 
 export default function App(){
+  function hendleClick() {
+        console.log("Button clicked");
+    }
+
   return (
     <>
       <div className="StartPage">
@@ -32,8 +37,8 @@ export default function App(){
 
         <div className="authButtons">
           <h3 className="AppDescription">Get started by logging in or signing up</h3>
-          <button type="button" className="button">Log in</button>
-          <button type="button" className="button">Sign up</button>
+          <Button onClick={hendleClick}>Log in</Button>
+          <Button onClick={hendleClick}>Sign up</Button>
         </div>
       </div>
     </>
