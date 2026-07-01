@@ -1,0 +1,153 @@
+:root {
+  /* ===== Colors ===== */
+  --bg-page: #f4f6e6;
+  --bg-card: #ffffff;
+
+  --primary: #281f5a;
+  --primary-hover: #372d73;
+
+  --text: #1f2937;
+  --text-secondary: #6b7280;
+  --text-light: #ffffff;
+
+  --border: #e5e7eb;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  /* ===== Sizes ===== */
+  --header-height: 70px;
+  --sidebar-width: 260px;
+
+  /* ===== Radius ===== */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* ===== Shadow ===== */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* ===== Font ===== */
+  --font:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: var(--font);
+  font-size: 14px;
+
+  background: var(--bg-page);
+  color: var(--text);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* React root */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========================= */
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b7b7b7;
+}
+
+/* ========================= */
+/* Main content */
+
+.main {
+  margin-top: var(--header-height);
+  margin-left: var(--sidebar-width);
+
+  width: calc(100% - var(--sidebar-width));
+  min-height: calc(100vh - var(--header-height));
+
+  padding: 32px;
+
+  background: var(--bg-page);
+
+  transition:
+    margin-left 0.3s ease,
+    width 0.3s ease;
+
+  overflow-y: auto;
+}
+
+/* Sidebar closed */
+
+.main.sidebar-closed {
+  margin-left: 0;
+  width: 100%;
+}
