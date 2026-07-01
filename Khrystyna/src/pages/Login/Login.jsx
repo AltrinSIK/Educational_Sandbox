@@ -5,29 +5,41 @@ import './Login.css'
 import Header from "../../components/Header/Header.jsx";
 import Button from '../../components/Button/Button.jsx'
 
-export default function Login(){
+import { useNavigate } from 'react-router-dom';
+
+export default function LogIn(){
+  const navigate = useNavigate();
   function hendleClick() {
-        console.log("Button clicked");
+        navigate('/dashboard');
     }
 
   return (
     <>
         <div className="LoginBlock">
             <img src={studdyLogo} className="Logo" alt="Studdy logo" width="60" height="60" />
-            <h1>Login</h1>
+            <h1>Log In</h1>
             <h3>Створіть свій затишний простір для навчання</h3>
             <form className="LoginForm">
-                <h4>Ім'я</h4>
-                <input type="text" placeholder="Ім'я" />
-                <h4>Прізвище</h4>
-                <input type="text" placeholder="Прізвище" />
-                <h4>Електронна пошта</h4>
-                <input type="email" placeholder="Електронна пошта" />
-                <h4>Пароль</h4>
-                <input type="password" placeholder="Пароль" />
-                <h4>Підтвердіть пароль</h4>
-                <input type="password" placeholder="Пароль" />
+                <label htmlFor="firstName">Ім'я</label>
+                <input type="text" id="firstName" placeholder="Ім'я" />
+                <label htmlFor="lastName">Прізвище</label>
+                <input type="text" id="lastName" placeholder="Прізвище" />
+                <label htmlFor="email">Електронна пошта</label>
+                <input type="email" id="email" placeholder="Електронна пошта" />
+                <label htmlFor="password">Пароль</label>
+                <input type="password" id="password" placeholder="Пароль" />
+                <label htmlFor="confirmPassword">Підтвердіть пароль</label>
+                <input type="password" id="confirmPassword" placeholder="Пароль" />
             </form>
+            <br></br>
+            <checkbox>
+                <input type="checkbox" id="agreement" />
+                <label htmlFor="agreement">Реєструючись, ви погоджуєтеся з Угодою користувача та Політикою конфіденційності сайту й даєте згоду на обробку персональних даних.</label>
+            </checkbox>
+            <br></br>
+            <Button onClick={hendleClick}>Зареєструватися</Button>
+            <br></br>
+            <label htmlFor="login">Вже маєте акаунт? <a href="/login">Увійти</a></label>
         </div>
     </>
   )

@@ -1,19 +1,60 @@
 .button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: #7b2ff7;
-  border: none;
-  border-radius: 5px;
+  /* Позиціонування та гнучкість */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Відступ, якщо всередині кнопки буде іконка */
+  
+  /* Розміри та внутрішні відступи */
+  padding: 12px 24px; /* Трохи збільшено для кращого тач-досвіду */
+  font-size: 15px; /* 15px-16px з хорошим інтервалом виглядає акуратніше */
+  font-weight: 500; /* Робимо текст трішки чіткішим */
+  letter-spacing: -0.01em; /* Сучасний тренд для міжлітерного інтервалу */
+  line-height: 1.2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Кольори та межі */
+  color: #ffffff;
+  background-color: #0e6273;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Ледь помітна внутрішня межа для об'єму */
+  border-radius: 8px; /* Сучасний стандарт скруглення замість 5px */
+  
+  /* Ефекти та інтерактивність */
   cursor: pointer;
-  transition: background-color 0.3s;
+  user-select: none;
+  
+  /* М'яка тінь додає глибини (ефект "піднятої" кнопки) */
+  box-shadow: 0 2px 4px rgba(14, 98, 115, 0.15), 
+              0 1px 2px rgba(0, 0, 0, 0.05);
+  
+  /* Плавні переходи для ВСІХ станів (колір, тінь, масштаб) */
+  transition: background-color 0.2s ease, 
+              transform 0.1s ease, 
+              box-shadow 0.2s ease;
 
+  /* Стан при наведенні курсору */
   &:hover {
-    background-color: #9d4edd;
+    background-color: #0b4e5c;
+    /* Тінь стає трохи більшою, ніби кнопка піднімається */
+    box-shadow: 0 4px 8px rgba(14, 98, 115, 0.25);
   }
 
+  /* Стан в момент самого КЛІКУ (мікро-анімація натискання) */
+  &:active {
+    transform: scale(0.97); /* Кнопка візуально продавлюється всередину */
+    background-color: #093f4a;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Активний стан (якщо кнопка вибрана/натиснута постійно) */
   &.active {
-    background-color: #9d4edd;
+    background-color: #093f4a;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Ефект втиснутої кнопки */
+  }
+
+  /* Дуже важливий стан для доступності з клавіатури */
+  &:focus-visible {
+    outline: 3px solid rgba(14, 98, 115, 0.4);
+    outline-offset: 2px;
   }
 }
