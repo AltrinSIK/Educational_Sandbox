@@ -24,6 +24,12 @@ function NavigationBar() {
       >
         Логін
       </Button>
+
+      <Button 
+        onClick={() => navigate('/signup')}
+      >
+        Реєстрація
+      </Button>
       
       <Button 
         onClick={() => navigate('/dashboard')}
