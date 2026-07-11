@@ -34,7 +34,7 @@ export default function LogIn(){
             <br></br>
             <checkbox>
                 <input type="checkbox" id="agreement" />
-                <label htmlFor="agreement">Реєструючись, ви погоджуєтеся з Угодою користувача та Політикою конфіденційності сайту й даєте згоду на обробку персональних даних.</label>
+                <label htmlFor="agreement">Реєструючись, ви погоджуєтеся з нашими <a href="/terms" target="_blank" rel="noopener noreferrer">Умовами використання</a> та <a href="/privacy" target="_blank" rel="noopener noreferrer">Політикою конфіденційності</a>.</label>
             </checkbox>
             <br></br>
             <Button onClick={hendleClick}>Зареєструватися</Button>
