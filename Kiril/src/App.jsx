@@ -4,8 +4,7 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
-import { Outlet } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+
 import Dashboard from "./Pages/Dashboard/Dashboard";
 
 export default function App() {

@@ -1,113 +1,146 @@
-/* Підзаголовок "Створіть свій затишний простір..." */
-.subtitle {
-  font-size: 14px;
-  color: #5c6b73;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-/* Стилізація форми та інпутів */
-form {
+body {
   display: flex;
-  flex-direction: column;
-  gap: 16px;                   /* Відступи між полями */
-  text-align: left;            /* Вирівнювання підписів по лівому краю */
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* Рядок, де Ім'я та Прізвище стоять поруч */
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-h);
-}
-
-input {
-  font-family: var(--sans);
-  font-size: 14px;
-  padding: 12px 16px;
-  border: 1px solid var(--border);
-  background: var(--input-bg);
-  border-radius: 8px;          /* Акуратні закруглені кути полів */
-  color: var(--text-h);
-  outline: none;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-input::placeholder {
-  color: var(--text-muted);
-}
-
-input:focus {
-  border-color: var(--accent); /* Підсвічування при фокусі */
-}
-
-/* Головна кнопка "Зареєструватися" */
-.btn-submit {
-  font-family: var(--sans);
-  font-size: 15px;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: var(--accent);
-  border: none;
-  border-radius: 8px;
-  padding: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 8px;
-  transition: background-color 0.2s;
-  margin-top: 10px;
+  align-items: center;
+
+  font-family: var(--font-family);
+
+  background: linear-gradient(135deg, #eef4ff 0%, #f7f9fc 50%, #e8eefc 100%);
 }
 
-.btn-submit:hover {
-  background-color: var(--accent-hover);
+.LoginBlock {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 80px auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 48px;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+
+  box-sizing: border-box;
 }
 
-/* Нижня частина: "Вже маєте акаунт? Увійти" та футер */
-.footer-text {
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin-top: 10px;
+.Logo {
+  width: 72px;
+  height: 72px;
+
+  margin-bottom: 20px;
+
+  object-fit: contain;
 }
 
-.footer-text a {
-  color: var(--accent);
-  text-decoration: none;
+.LoginBlock h1 {
+  margin: 0;
+
+  font-size: 40px;
+  font-weight: 700;
+
+  color: var(--text-primary);
+}
+
+.LoginBlock h3 {
+  margin: 10px 0 32px;
+
+  font-size: 16px;
   font-weight: 500;
+
+  color: var(--text-secondary);
+
+  text-align: center;
 }
 
-.footer-text a:hover {
+.LoginForm {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.LoginForm label {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.LoginForm input {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+
+  background: #fafbfc;
+
+  font-size: 15px;
+
+  transition: 0.2s;
+
+  box-sizing: border-box;
+}
+
+.LoginForm input:focus {
+  outline: none;
+
+  border-color: var(--accent);
+
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.LoginBlock button {
+  margin-top: 28px;
+}
+
+.LoginBlock label:last-child {
+  margin-top: 20px;
+
+  font-size: 14px;
+
+  color: var(--text-secondary);
+
+  text-align: center;
+}
+
+.LoginBlock label:last-child a {
+  color: var(--accent);
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.LoginBlock label:last-child a:hover {
   text-decoration: underline;
 }
 
-/* Адаптивність для мобільних пристроїв */
-@media (max-width: 480px) {
-  body {
-    padding: 0;
+@media (max-width: 600px) {
+  .LoginBlock {
+    margin: 20px;
+
+    padding: 32px 24px;
   }
-  #root {
-    border-radius: 0;
-    min-height: 100vh;
-    padding: 30px 20px;
-    box-shadow: none;
+
+  .LoginBlock h1 {
+    font-size: 32px;
   }
-  .form-row {
-    grid-template-columns: 1fr; /* На мобільних ім'я та прізвище стають одне під одним */
+
+  .LoginBlock h3 {
+    font-size: 15px;
   }
 }

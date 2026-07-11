@@ -1,0 +1,153 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 70px;
+
+  padding: 0 32px;
+  box-sizing: border-box;
+
+  background-color: #47475c;
+  color: white;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+  transition:
+    left 0.3s ease,
+    width 0.3s ease;
+}
+.header.sidebar-open {
+  left: var(--sidebar-width);
+
+  width: calc(100% - var(--sidebar-width));
+}
+.search {
+  display: flex;
+  align-items: center;
+
+  width: 420px;
+  height: 44px;
+
+  background: #fff;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 48px;
+  height: 100%;
+
+  border: none;
+  background: transparent;
+
+  color: #777;
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+.search-input {
+  flex: 1;
+
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  padding-right: 16px;
+
+  font-size: 14px;
+  background: transparent;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.icon-btn {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: white;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 6px 10px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.profile-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.user-avatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* вирівнювання тексту по правому краю */
+}
+.user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.2;
+}
+.user-role {
+  font-size: 13px;
+  color: #cfcfe6;
+  line-height: 1.2;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

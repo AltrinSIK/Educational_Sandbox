@@ -1,89 +1,104 @@
 :root {
-  /* Кольори з інтерфейсу Staddy */
-  --bg-page: #f4f6e6;          /* Кремовий фон сторінки */
-  --bg-card: #ffffff;          /* Біла картка форми */
-  --text-h: #0d1b2a;           /* Темний колір для заголовків */
-  --text: #4a5568;             /* Основний текст підписів */
-  --text-muted: #8a94a6;       /* Текст для плейсхолдерів та футера */
-  --border: #e2e8f0;           /* Світла рамка полів вводу */
-  --input-bg: #f8fafc;         /* Легкий фон всередині інпутів */
-  
-  --accent: #0e6273;           /* Глибокий тиловий (синьо-зелений) */
-  --accent-hover: #0a4b58;     /* Темніший відтінок для ховеру */
-  
-  --shadow: rgba(0, 0, 0, 0.05) 0px 10px 30px 0px;
+  /* ===== COLORS ===== */
 
-  --sans: 'Inter', system-ui, -apple-system, sans-serif;
-  
-  font: 14px/150% var(--sans);
-  color: var(--text);
-  background: var(--bg-page);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+  --bg-page: #f5f7fb;
+  --bg-surface: #ffffff;
 
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+
+  --border: #e5e7eb;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  /* ===== LAYOUT ===== */
+
+  --header-height: 70px;
+  --sidebar-width: 260px;
+
+  /* ===== RADIUS ===== */
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+
+  /* ===== FONT ===== */
+
+  --font-family: "Inter", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
+  font-family: var(--font-family);
+
+  background: var(--bg-page);
+  color: var(--text-primary);
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Перетворюємо центральний контейнер на білу картку, як на фото */
-#root {
-  width: 540px;                /* Оптимальна ширина для форми реєстрації */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
   max-width: 100%;
-  margin: 0 auto;
-  background: var(--bg-card);
-  padding: 40px;
-  border-radius: 16px;         /* Закруглені кути картки */
-  box-shadow: var(--shadow);   /* М'яка тінь навколо картки */
-  text-align: center;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;                   /* Контроль відступів між секціями */
 }
 
-/* Стилі для логотипу (якщо додаси іконку капелюха в коло) */
-.brand-icon {
-  width: 56px;
-  height: 56px;
-  background-color: #7bc1dc;   /* Блакитний фон кола */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-h1, h2, h3 {
+ul,
+ol {
   margin: 0;
-  line-height: 1.2;
+  padding: 0;
+
+  list-style: none;
 }
 
-h1 {
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-top: 8px;
-}
-
-h4 {
-  font-family: var(--sans);
-  color: var(--text-h);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.3;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
